@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway Market Research Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Gateway Market Research Tool</h2>
+    <p>Analyze any product or industry instantly.</p>
+    
+    <form action="/" method="POST">
+        <input type="text" name="product_name" placeholder="Enter product/industry name" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if insights %}
+    <div class="results">
+        <h3>Market Insights:</h3>
+        <p><strong>Trends:</strong> {{ insights.trends }}</p>
+        <p><strong>Top Competitors:</strong> {{ insights.competitors }}</p>
+        <p><strong>SEO Keywords:</strong> {{ insights.keywords }}</p>
+        <p><strong>Audience Sentiment:</strong> {{ insights.sentiment }}</p>
+        <p><strong>AI-Powered Recommendations:</strong> {{ insights.recommendations }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
